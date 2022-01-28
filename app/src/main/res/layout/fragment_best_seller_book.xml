@@ -1,20 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/ranking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:typeface="normal"
+        android:textAppearance="?attr/textAppearanceListItem" />
+
+    <ImageView
+        android:id="@+id/book_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:layout_toRightOf="@+id/ranking"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
         android:id="@+id/book_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/book_image"
+        android:textStyle="bold"
+        android:textSize="24sp"
         android:textAppearance="?attr/textAppearanceListItem" />
 
     <TextView
         android:id="@+id/book_author"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/book_title"
+        android:textStyle="italic"
+        android:textSize="20sp"
         android:textAppearance="?attr/textAppearanceListItem" />
-</LinearLayout>
+
+    <TextView
+        android:id="@+id/book_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/book_author"
+        android:textSize="14sp"
+        android:textStyle="normal"
+
+        android:textAppearance="?attr/textAppearanceListItem" />
+
+    <Button
+        android:id="@+id/buy_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/book_description"
+        android:backgroundTint="#009900"
+        android:text="Buy on Amazon" />
+</RelativeLayout>
